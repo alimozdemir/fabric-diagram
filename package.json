@@ -3,9 +3,6 @@
   "version": "1.0.0",
   "description": "Useful fabricjs objects and functions",
   "main": "src/index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/lyzerk/fabric-diagram.git"
@@ -20,5 +17,25 @@
   "bugs": {
     "url": "https://github.com/lyzerk/fabric-diagram/issues"
   },
-  "homepage": "https://github.com/lyzerk/fabric-diagram#readme"
+  "homepage": "https://github.com/lyzerk/fabric-diagram#readme",
+  "devDependencies": {
+    "@babel/core": "^7.4.4",
+    "@babel/preset-env": "^7.4.4",
+    "babel-loader": "^8.0.6",
+    "source-map-explorer": "^1.8.0",
+    "webpack": "^4.31.0",
+    "webpack-cli": "^3.3.2",
+    "fabric": "^3.3.2"
+  },
+  "scripts": {
+    "audit": "source-map-explorer public/dist/main.bundle.js",
+    "clear": "rm -rf public/dist/",
+    "clear:all": "rm -rf node_modules/ && npm run clear",
+    "count": "find src -name '*.js' | xargs wc -l | sort -r",
+    "build": "npm run build:development",
+    "build:development": "webpack --config webpack/webpack.config.dev.js",
+    "build:production": "webpack --config webpack/webpack.config.prod.js",
+    "watch": "npm run build:development -- -w",
+    "start": "node public/dist/main.bundle.js"
+  }
 }
