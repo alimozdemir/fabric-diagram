@@ -4,14 +4,18 @@ const path = require('path');
 
 module.exports = {
     entry: {
-        main: path.resolve('./src/index.js')
+        'fabric-diagram': path.resolve('./src/index.js')
     },
-
     output: {
-        filename: '[name].bundle.js',
-        path: path.resolve('./public/dist')
-    },
+        filename: '[name].min.js',
+        path: path.resolve('./public/dist'),
 
+        library: 'Canvas',
+        libraryTarget: 'var'
+    },
+    externals: {
+        fabric: 'fabric'
+    },
     module: {
         rules: [
             {
