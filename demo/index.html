@@ -12,12 +12,20 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/3.4.0/fabric.min.js"></script>
     <script src="../public/dist/fabric-diagram.min.js"></script>
     <script>
-        var canvas = new fabric.Canvas(document.getElementById('canvas'));
-        // var canvas = new fabric.Canvas(document.getElementById('canvas'));
-        console.log(Canvas);
-            console.log(canvas.add);
-            console.log(canvas.addGrid);
-            canvas.addGrid();
+        var canvas = new fabric.Canvas(document.getElementById('canvas'), {
+            selection: false
+        });
+
+        var triangle = new fabric.Triangle({
+            fill: 'green',
+            left: 200,
+            top: 200,
+            selectable: false
+        });
+    
+        canvas.addGrid();
+        canvas.togglePan();
+        canvas.add(triangle);
     </script>
 
 </body>

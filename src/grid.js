@@ -15,8 +15,8 @@ var defines = {
     addGrid(options) {
         const defaultOptions = {
             distance: 10,
-            width: canvas.width,
-            height: canvas.height,
+            width: this.width,
+            height: this.height,
             lineParam: {
                 stroke: '#ebebeb',
                 strokeWidth: 1,
@@ -24,7 +24,7 @@ var defines = {
             },
             stroke: '#cccccc'
         };
-        options = Object.assign(options, defaultOptions, {});
+        options = [ defaultOptions, options ].reduce(Object.assign, {});
 
         const gridLen = options.width / options.distance;
         const objs = [];
