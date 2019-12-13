@@ -1,5 +1,5 @@
 
-var fabric = require('fabric');
+// import { fabric } from 'fabric'
 import './helper.js';
 
 var defines = {
@@ -56,6 +56,8 @@ var defines = {
         }
     }
 }
+
+// fabric.util.object.extend(fabric.Canvas.prototype, defines);
 
 fabric.Canvas.prototype.toggleGrid = defines.toggleGrid;
 fabric.Canvas.prototype.addGrid = defines.addGrid;

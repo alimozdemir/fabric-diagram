@@ -34,9 +34,16 @@ var defines = {
 }
 
 
+if (fabric.fabric)
+    fabric = fabric.fabric;
+
+    /*
 fabric.Canvas.prototype.togglePan = defines.togglePan;
 fabric.Canvas.prototype._panMouseUp = defines._panMouseUp;
 fabric.Canvas.prototype._panMouseDown = defines._panMouseDown;
 fabric.Canvas.prototype._panMouseMove = defines._panMouseMove;
+*/
 
+fabric.util.object.extend(fabric.Canvas.prototype, defines);
 
+export default { fabric }
