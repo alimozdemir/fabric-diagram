@@ -22,7 +22,11 @@ var defines = {
     _panMouseDown() {
         this.panning = true;
     },
-    _panMouseMove(e) {            
+    _panMouseMove(e) {
+        const obj = this.getActiveObject();
+        if (obj)
+            return;
+
         if (this.panning && e && e.e) { 
             var units = 10;
             var delta = new fabric.Point(e.e.movementX, e.e.movementY);

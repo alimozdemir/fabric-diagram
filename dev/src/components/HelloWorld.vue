@@ -20,7 +20,7 @@ export default {
         fill: 'green',
         left: 200,
         top: 200,
-        selectable: false
+        selectable: true
     });
     
     canvas.addGrid();
