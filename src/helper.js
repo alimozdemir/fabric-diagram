@@ -1,5 +1,3 @@
-// import { fabric } from 'fabric'
-
 fabric.Canvas.prototype.getObjectById = function (id) {
     
     for (let i = 0; i < this._objects.length; i++) {

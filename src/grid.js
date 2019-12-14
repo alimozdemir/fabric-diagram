@@ -1,5 +1,3 @@
-
-// import { fabric } from 'fabric'
 import './helper.js';
 
 var defines = {
@@ -47,7 +45,7 @@ var defines = {
             selectable: false,
             id: 'grid'
         });
-        canvas.add(group);
+        this.add(group);
     },
     removeGrid() {
         const grid = this.getObjectById('grid');
@@ -57,8 +55,12 @@ var defines = {
     }
 }
 
-// fabric.util.object.extend(fabric.Canvas.prototype, defines);
+fabric.Canvas.prototype.addGrid = defines.addGrid;
+fabric.Canvas.prototype.removeGrid = defines.removeGrid;
 
+/*
 fabric.Canvas.prototype.toggleGrid = defines.toggleGrid;
 fabric.Canvas.prototype.addGrid = defines.addGrid;
 fabric.Canvas.prototype.removeGrid = defines.removeGrid;
+
+export const ExportDefault = fabric.Canvas.prototype;*/

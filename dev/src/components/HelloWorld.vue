@@ -7,6 +7,7 @@
 <script>
 import { fabric } from 'fabric';
 import '../../../src/grid';
+import '../../../src/pan';
 
 export default {
   name: 'HelloWorld',
@@ -23,8 +24,9 @@ export default {
     });
     
     canvas.addGrid();
-    //canvas.togglePan();
+    canvas.togglePan();
     canvas.add(triangle);
+    // canvas.removeGrid();
   },
 
 }
